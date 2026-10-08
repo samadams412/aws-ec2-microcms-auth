@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Sam Adams : Shopping Cart</title>
+        <!-- Reusing template tab icon configuration -->
+        <link rel="icon" type="image/icon" href="../hw12/assets/images/logo.png">
+
+        <!-- Stylesheets from template -->
+        <link href="../hw12/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../hw12/assets/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="../hw12/assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700,700i|Josefin+Sans:700" rel="stylesheet">
+        <link href="../hw12/assets/css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="index" style="display: block !important; opacity: 1 !important; padding-top: 50px;">                                           
+            <div class="container main">
+                <div class="row">
+                    <!-- Left Side: Reusing branding side to keep it cohesive -->
+                    <div id="index_left" class="col-md-4 text-center left">
+                        <div class="logo" style="margin-top: 20px;">
+                            <img src="../hw12/assets/images/logo.png" alt="Logo">
+                            <h4>Sam Adams</h4>
+                            <p style="font-family: 'Crimson Text', serif; font-style: italic; color: #777;">Assignment 8</p>
+                        </div>
+                        
+                        <!-- Navigation Menu -->
+                        <div class="btn-group-vertical custom_btn" style="margin-top: 30px;">
+                            <a href="../hw12/index.html" class="btn btn-rabbit">Home</a>
+                            <a href="#" class="btn btn-rabbit active" style="background-color: #bb9e7d; color: #fff;">Shopping Cart</a>
+                        </div>      
+                    </div>
+                    
+                    <!-- Right Side: The Shopping Cart functionality -->
+					<div id="index_right" class="col-md-8 right" style="padding: 20px;">
+						<h2 style="font-family: 'Josefin Sans', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #333; margin-bottom: 20px;">
+							My Shopping Cart 
+							<!-- Item Count Badge -->
+							<span id="item-count" class="badge" style="background-color: #bb9e7d; margin-left: 10px; padding: 6px 12px; font-size: 16px;">0</span>
+						</h2>
+
+						<!-- Input Area: Flex wrapper matching nav styling -->
+						<div class="form-group font-sans">
+							<label for="item-input" style="font-family: 'Open Sans', sans-serif; font-weight: 600; color: #555; display: block; margin-bottom: 8px;">Add New Item:</label>
+							<div style="display: flex; gap: 5px; align-items: center; flex-wrap: wrap;">
+								<!-- Input box styled to match -->
+								<input type="text" id="item-input" class="form-control" placeholder="What do you need to buy?..." style="height: 34px; max-width: 300px; display: inline-block; border-radius: 4px;">
+								<!-- Button styled like navigation buttons -->
+								<button class="btn btn-rabbit btn-sm" type="button" id="add-item-btn" style="background-color: #bb9e7d; color: #fff;">Add Item</button>
+							</div>
+						</div>
+
+						<hr style="border-top: 1px solid #eee; margin: 30px 0;">
+
+						<!-- Shopping List Container -->
+						<div class="shopping-list-wrapper">
+							<ul id="shopping-list" class="list-group">
+								<!-- dynamically insert list items here -->
+							</ul>
+						</div>
+					</div>
+                </div>
+            </div>        
+        </div>                                                                
+
+        <!-- Footer -->
+        <footer class="text-center" style="padding: 20px 0; background: #fff; margin-top: 50px;">
+            <div class="container bottom">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Made with <i class="fa fa-heartbeat" aria-hidden="true" style="color: #bb9e7d;"></i> by Sam Adams</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="../hw12/assets/js/cart.js"></script>
+    </body>
+</html>

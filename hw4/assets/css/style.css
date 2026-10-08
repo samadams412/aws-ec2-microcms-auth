@@ -1,0 +1,94 @@
+/* --- Global Styles & Layout --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #A6C9EC;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.page-title-bar {
+    background-color: #4D93D9;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.page-title-bar h2 {
+    margin: 0;
+}
+
+/* --- Navigation Menu --- */
+nav {
+    background-color: #E0E0E0;
+    display: flex;
+    width: 100%;
+}
+
+nav a {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    text-decoration: none; /* Removes link underlines */
+    color: #000000;
+    font-weight: normal;
+}
+
+/* Hover state for menu items */
+nav a:hover {
+    background-color: #D0D0D0;
+}
+
+/* Active menu item state */
+nav a.active {
+    background-color: #B0C4DE;
+    font-weight: bold;
+}
+
+/* --- Content Specific Layouts (Flexbox replaces tables) --- */
+.profile-section, .work-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-img-container {
+    flex: 3;
+    text-align: center;
+}
+
+.profile-text, .work-text {
+    flex: 7;
+}
+
+.work-img-container {
+    flex: 4;
+    text-align: center;
+}
+
+/* --- Data Table (School Schedule) --- */
+/* Kept because this is tabular data, but styled via CSS */
+.schedule-table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 15px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #D3D3D3;
+}

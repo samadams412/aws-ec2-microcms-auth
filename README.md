@@ -1,8 +1,12 @@
 # AWS EC2 Micro-CMS + Auth System
 
-Final cumulative build from an 18-assignment web technologies course: a
-database-backed CMS and authentication system hand-deployed to a real AWS
-EC2 instance, built incrementally rather than scaffolded from a template.
+An 18-assignment web technologies course, built incrementally and deployed
+to a real AWS EC2 instance the whole way through — not scaffolded from a
+template. Each stage below is the actual state of the app at that point in
+the course; nothing here was reconstructed after the fact.
+
+`hw1` and `hw14` aren't included — they were non-code assignments and were
+never deployed to the instance.
 
 ## Infrastructure
 
@@ -11,31 +15,37 @@ EC2 instance, built incrementally rather than scaffolded from a template.
 - nginx configured on the instance with HTTPS via a self-signed TLS certificate.
 - MySQL + phpMyAdmin installed and configured on the server.
 
-## Build order
+See [`INCIDENT.md`](./INCIDENT.md) for a production issue hit (and fixed)
+while pulling screenshots for this case study.
 
-The site was built up in stages across the course, each assignment adding a
-layer on top of the last:
+## Build progression
 
-1. Static HTML/CSS foundation
-2. Bootstrap responsive refactor
-3. Client-side JavaScript form validation
-4. PHP GET/POST handling and dynamic page rendering
-5. A `contact_data` MySQL database capturing form submissions
-6. A lightweight CMS: site navigation and page content stored in MySQL
-   (`menu` and `pages` tables), with `index.php`/`navigation.php` rewritten
-   to render pages and an active-state nav menu dynamically from the
-   database — every query uses explicit field selection, no wildcard `SELECT`s
-7. A full authentication system: registration with input validation and
-   duplicate-username checking, salted SHA-256 password hashing, login with
-   server-side session-ID generation persisted to the database, and a
-   protected results page that validates the session ID against the
-   database before granting access
+| Stage | What it added |
+|---|---|
+| [`hw2`](./hw2) | Single static HTML page |
+| [`hw3`](./hw3)–[`hw5`](./hw5) | Multi-page static site (home/contact/hobbies/school/work), styling passes |
+| [`hw6`](./hw6)–[`hw7`](./hw7) | Client-side JavaScript introduced (`jstest.html`) |
+| [`hw8`](./hw8) | Bootstrap refactor + shopping-cart UI |
+| [`hw9`](./hw9) | First PHP (`index.php`, dynamic date) |
+| [`hw10`](./hw10)–[`hw11`](./hw11) | GET/POST form handling (`results.php`); `contact.php` converted to PHP |
+| [`hw12`](./hw12) | Server-side validation helpers extracted (`functions.php`) |
+| [`hw13`](./hw13) | Remaining pages converted to PHP, dynamic navigation (`navigation.php`) |
+| [`hw15`](./hw15) | First real DB write — contact form inserts into MySQL |
+| [`hw16`](./hw16) | `dbConnect()` helper extracted into `functions.php`; DB read/display (`query_contacts.php`) |
+| [`hw17`](./hw17) | Full CMS — nav and page content pulled dynamically from the `cms` database (`menu`/`pages` tables), explicit field selection in every query (no wildcard `SELECT`s) |
+| [`hw18`](./hw18) | Full authentication system — registration with input validation and duplicate-username checking, salted SHA-256 password hashing, server-side session-ID generation, and a protected results page that validates the session ID against the database |
 
-## This repo
+`hw18` is the final state and the one referenced in the portfolio case study;
+see [`hw18/screenshots/`](./hw18/screenshots) once captured.
 
-This is the final stage (originally "hw18") — the code as it stood on the
-live EC2 instance. Database credentials were pulled out into environment
-variables for this repo; see `.env.example`.
+## Credentials
+
+Every stage from `hw15` onward connected to MySQL with a hardcoded
+`web_user` password in the source. That's been pulled into environment
+variables (`getenv('DB_HOST')` / `DB_USER` / `DB_PASSWORD`) across all four
+affected files (`hw15/contact.php`, `hw16/functions.php`,
+`hw17/functions.php`, `hw18/functions.php`) for this repo. See
+`.env.example`.
 
 ## Stack
 
