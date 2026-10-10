@@ -2,7 +2,7 @@
 
 This project was built incrementally across 18 assignments, deployed directly to a live AWS EC2 instance via SFTP as each assignment was completed. Git wasn’t part of the original coursework workflow, so this repository captures the final state as a single commit rather than the assignment-by-assignment history.
 
-`hw1` and `hw14` aren't included — they were non-code assignments and were
+`hw1` and `hw14` aren't included, they were non-code assignments and were
 never deployed to the instance.
 
 ## Infrastructure
