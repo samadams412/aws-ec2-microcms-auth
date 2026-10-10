@@ -1,9 +1,6 @@
 # AWS EC2 Micro-CMS + Auth System
 
-An 18-assignment web technologies course, built incrementally and deployed
-to a real AWS EC2 instance the whole way through — not scaffolded from a
-template. Each stage below is the actual state of the app at that point in
-the course; nothing here was reconstructed after the fact.
+This project was built incrementally across 18 assignments, deployed directly to a live AWS EC2 instance via SFTP as each assignment was completed. Git wasn’t part of the original coursework workflow, so this repository captures the final state as a single commit rather than the assignment-by-assignment history.
 
 `hw1` and `hw14` aren't included — they were non-code assignments and were
 never deployed to the instance.
